@@ -31,11 +31,11 @@ httpsServer.listen(config.httpsPort,function(){
 
 var handlers = {};
 handlers.hello = function(data,callback){
-  callback(200,"Hello, Welcome to the World of NodeJS!!!\n");
+  callback(200,"Hello, Welcome to the World of NodeJS!!!");
 }
 
 handlers.notFound = function(data,callback){
-  callback(404,"Sorry, I don't understand your language!!!\n");
+  callback(404,"Sorry, I don't understand your language!!!");
 }
 
 var router = {
@@ -58,8 +58,9 @@ var unifiedServer = function(req,res){
 
     res.setHeader('Content-Type', 'application/json');
     res.writeHead(statusCode);
-    res.end(payload);
+    var payloadString = JSON.stringify(payload);
+    res.end(payloadString);
 
-    console.log("Returning: ",statusCode,payload);
+    console.log("Returning: ",statusCode,payloadString);
   });
 };
