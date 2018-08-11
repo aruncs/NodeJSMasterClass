@@ -7,7 +7,8 @@ var router = {
   "notFound" : handlers.notFound,
   "users" : handlers.users,
   "tokens" : handlers.tokens,
-  "checks" : handlers.checks
+  "items" : handlers.items,
+  "shoppingCart" : handlers.shoppingCarts
 };
 
 module.exports = router;

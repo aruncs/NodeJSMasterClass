@@ -2,12 +2,26 @@
 //Dependencies.
 var userHandler = require('./userHandler');
 var tokenHandler = require('./tokenHandler');
+var itemHandler = require('./itemHandler');
+var shoppingCartHandler = require('./shoppingCartHandler');
 
 var handlers = {};
 
-handlers.users = userHandler.users;
+handlers.users = function(data,callback){
+  userHandler.users(data,callback);
+};
 
-handlers.tokens = tokenHandler.tokens;
+handlers.tokens = function(data,callback){
+  tokenHandler.tokens(data,callback);
+};
+
+handlers.items = function(data,callback){
+  itemHandler.items(data,callback);
+};
+
+handlers.shoppingCarts = function(data,callback){
+  shoppingCartHandler.shoppingCarts(data,callback);
+};
 
 handlers.notFound = function(data,callback){
   callback(404);

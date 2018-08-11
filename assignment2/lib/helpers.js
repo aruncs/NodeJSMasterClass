@@ -34,6 +34,6 @@ helpers.createRandomString = function(length){
     }
   }
   return str;
-}
+};
 
 module.exports = helpers;
