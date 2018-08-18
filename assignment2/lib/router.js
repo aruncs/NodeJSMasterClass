@@ -8,7 +8,8 @@ var router = {
   "users" : handlers.users,
   "tokens" : handlers.tokens,
   "items" : handlers.items,
-  "shoppingCart" : handlers.shoppingCarts
+  "shoppingCart" : handlers.shoppingCarts,
+  "orders" : handlers.orders
 };
 
 module.exports = router;

@@ -1,0 +1,37 @@
+{
+  "PaneerSoyaSupreme" : {
+    "itemId" : "PaneerSoyaSupreme",
+    "itemName" : "Paneer Soya Supreme",
+    "price" : 10
+  },
+  "VegExotica" : {
+    "itemId" : "VegExotica",
+    "itemName" : "Veg Exotica",
+    "price" : 8
+  },
+  "VeggieItaliano" : {
+    "itemId" : "VeggieItaliano",
+    "itemName" : "Veggie Italiano",
+    "price" : 12
+  },
+  "VeggieSupreme" : {
+    "itemId" : "VeggieSupreme",
+    "itemName" : "Veggie Supreme",
+    "price" :14
+  },
+  "ChickenExotica" : {
+    "itemId" : "ChickenExotica",
+    "itemName" : "Chicken Exotica",
+    "price" : 15
+  },
+  "ChickenItaliano" : {
+    "itemId" : "ChickenItaliano",
+    "itemName" : "Chicken Italiano",
+    "price" : 17
+  },
+  "ChickenSupreme" : {
+    "itemId" : "ChickenSupreme",
+    "itemName" : "ChickenSupreme",
+    "price" : 20
+  }
+}

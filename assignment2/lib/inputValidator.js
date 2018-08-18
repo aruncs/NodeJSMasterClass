@@ -10,7 +10,10 @@ inputValidator.fieldNames = {
   "ADDRESS" : "address",
   "TOKEN_ID" : "id",
   "EXTEND" : "extend",
-  "ITEMS" : "items"
+  "ITEMS" : "items",
+  "TEXT" : "text",
+  "CURRENCY" : "currency",
+  "AMOUNT" : "amount"
 };
 
 inputValidator._validateFirstName = function(firstName){
@@ -47,6 +50,18 @@ inputValidator._validateItems = function(items){
   return typeof(items) == 'object' && items instanceof Object && Object.getOwnPropertyNames(items).length ? items : false;
 };
 
+inputValidator._validateText = function(text){
+  return typeof(text) == 'string' && text.trim().length > 0 ? text.trim() : false;
+};
+
+inputValidator._validateCurrency = function(currency){
+  return typeof(currency) == 'string' && currency.trim().length == 3 ? currency.trim() : false;
+};
+
+inputValidator._validateAmount = function(amount){
+  return typeof(amount) == 'number' && amount > 0 ? amount : false;
+};
+
 //Performs sanity check on the user input and returns the same value if everything is ok. return false otherwise.
 inputValidator.validate = function(value,fieldName){
   switch (fieldName) {
@@ -74,6 +89,8 @@ inputValidator.validate = function(value,fieldName){
     case inputValidator.fieldNames.ITEMS:
       value = inputValidator._validateItems(value);
       break;
+    case inputValidator.fieldNames.TEXT:
+      value = inputValidator._validateText(value);
     default:
       value = false;
   }
