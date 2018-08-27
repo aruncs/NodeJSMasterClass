@@ -44,11 +44,16 @@ orderHandler._orders.post = function(data,callback){
               if(!err){
                 _data.read('users',email,function(err,userDetails){
                   if(!err && userDetails){
-                    userDetails.orders = userDetails.orders ? userDetails.orders.push(orderDetails.orderId) : [''+orderDetails.orderId];
+
+                    if(!userDetails.orders){
+                      userDetails.orders = [];
+                    }
+                    userDetails.orders.push(orderDetails.orderId);
+
                     _data.update('users',email,userDetails,function(err){
                       if(!err){
-                        //make payment.
-                        stripe.charge('usd',parseInt(orderDetails.totalPrice),orderDetails.orderId,'tok_visa',function(err){
+                        //make payment. amount should is send in cents
+                        stripe.charge('usd',orderDetails.totalPrice*100,orderDetails.orderId,'tok_visa',function(err){
                           if(!err){
                             console.log('Payment successfull for order ' + orderDetails.orderId);
                             //update the order with new payment status.
@@ -69,6 +74,7 @@ orderHandler._orders.post = function(data,callback){
                                       }
                                     })
                                   }else{
+                                    console.log(err);
                                     callback(500,{'Error' : 'Failed to send email'});
                                   }
                                 });

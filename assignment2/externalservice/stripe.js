@@ -49,9 +49,10 @@ stripe.charge = function(currency,amount,description,source,callback){
 
         res.on('end',function(){
           dataBuffer += decoder.end();
-          //console.log(dataBuffer);
-          console.log(dataBuffer.paid);
-          if(dataBuffer.paid){
+          var response = JSON.parse(dataBuffer);
+
+          //console.log(response);
+          if(response.paid){
             callback(false);
           }else{
             callback('Payment failed');
@@ -70,7 +71,7 @@ stripe.charge = function(currency,amount,description,source,callback){
       req.end();
 
     }else{
-      console.log("Helllooooo");
+
       callback('Missing required field');
     }
 };

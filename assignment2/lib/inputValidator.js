@@ -91,6 +91,7 @@ inputValidator.validate = function(value,fieldName){
       break;
     case inputValidator.fieldNames.TEXT:
       value = inputValidator._validateText(value);
+      break;
     default:
       value = false;
   }

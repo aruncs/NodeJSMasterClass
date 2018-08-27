@@ -10,7 +10,7 @@ environments.staging = {
       'apiKey' : 'sk_test_BQokikJOvBiI2HlWgH4olfQ2'
     },
     'mailgun' : {
-      'apiKey' : 'key-3ax6xnjp29jd6fds4gc373sgvjxteol0'
+      'apiKey' : '12808eece3bfb0fd5db2bb2ae97d371e-a4502f89-4f711aa5'
     }
   }
 };
